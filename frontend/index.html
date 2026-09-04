@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>TriageCare AI</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-icon">✚</span>
+            <span>TriageCare <strong>AI</strong></span>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Prototype System
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- Hero Section -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="eyebrow">
+                    AI-ASSISTED PATIENT TRIAGE
+                </p>
+
+                <h1>
+                    Describe how you feel.
+                    <span>We'll help route your case.</span>
+                </h1>
+
+                <p class="hero-description">
+                    TriageCare AI extracts important information from
+                    your description and applies transparent triage
+                    rules to suggest an appropriate level of care.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TRIAGE CARD ================= -->
+
+        <section class="triage-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>Patient Information</h2>
+
+                    <p>
+                        Describe your symptoms in your own words.
+                    </p>
+                </div>
+
+                <div class="step">
+                    STEP 01
+                </div>
+
+            </div>
+
+
+            <!-- Symptom Input -->
+
+            <label for="symptoms">
+                What's happening?
+            </label>
+
+            <div class="input-wrapper">
+
+                <textarea
+                    id="symptoms"
+                    placeholder="Example: I have chest pain and I'm finding it difficult to breathe..."
+                    rows="7"></textarea>
+
+                <button
+                    class="voice-button"
+                    id="voiceButton"
+                    title="Voice input">
+                    🎤
+                </button>
+
+            </div>
+
+
+            <!-- Example buttons -->
+
+            <div class="examples">
+
+                <span>Try an example:</span>
+
+                <button onclick="useExample('I have chest pain and difficulty breathing.')">
+                    Chest pain
+                </button>
+
+                <button onclick="useExample('I have had a fever for 48 hours.')">
+                    Fever
+                </button>
+
+                <button onclick="useExample('I have moderate abdominal pain.')">
+                    Abdominal pain
+                </button>
+
+            </div>
+
+
+            <!-- Analyze button -->
+
+            <button
+                class="analyze-button"
+                id="analyzeButton"
+                onclick="analyzeSymptoms()">
+
+                <span>Analyze Symptoms</span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- Disclaimer -->
+
+            <p class="disclaimer">
+                ⚠️ Prototype only — this tool does not provide
+                a medical diagnosis. Seek professional medical
+                care when needed.
+            </p>
+
+        </section>
+
+
+        <!-- ================= RESULT ================= -->
+
+        <section
+            class="result-card hidden"
+            id="resultCard">
+
+            <div class="result-header">
+
+                <div>
+                    <p class="eyebrow">
+                        TRIAGE RESULT
+                    </p>
+
+                    <h2 id="resultTitle">
+                        Analysis Complete
+                    </h2>
+                </div>
+
+                <div
+                    class="urgency-badge"
+                    id="urgencyBadge">
+                    —
+                </div>
+
+            </div>
+
+
+            <div class="result-grid">
+
+                <!-- Department -->
+
+                <div class="result-box">
+
+                    <span class="result-label">
+                        RECOMMENDED ROUTE
+                    </span>
+
+                    <h3 id="department">
+                        —
+                    </h3>
+
+                </div>
+
+
+                <!-- Rule -->
+
+                <div class="result-box">
+
+                    <span class="result-label">
+                        RULE APPLIED
+                    </span>
+
+                    <h3 id="rule">
+                        —
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- Reasoning -->
+
+            <div class="reasoning-box">
+
+                <span class="result-label">
+                    WHY THIS RESULT?
+                </span>
+
+                <p id="reasoning">
+                    —
+                </p>
+
+            </div>
+
+
+            <!-- Human review -->
+
+            <div
+                class="review-box"
+                id="reviewBox">
+
+                <span class="review-icon">
+                    👨‍⚕️
+                </span>
+
+                <div>
+
+                    <strong>
+                        Human Review
+                    </strong>
+
+                    <p id="reviewText">
+                        —
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                TriageCare AI · PS01 Hackathon Prototype
+            </p>
+
+            <p>
+                Explainable • Rule-Based • Human-in-the-Loop
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>

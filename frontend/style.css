@@ -1,0 +1,670 @@
+/* ================================
+   TRIAGECARE AI
+   Main Styles
+================================ */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- BODY ---------- */
+
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    min-height: 100vh;
+}
+
+
+/* ---------- NAVBAR ---------- */
+
+.navbar {
+    width: 100%;
+    height: 72px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    border-bottom: 1px solid #e7ebf2;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.logo strong {
+    color: #246bfe;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #246bfe;
+    color: white;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+}
+
+
+/* Status */
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+    color: #667085;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #20b26b;
+}
+
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.container {
+    width: min(1100px, 90%);
+
+    margin: auto;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    padding: 70px 0 40px;
+}
+
+.hero-text {
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: #246bfe;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 64px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #246bfe;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #667085;
+}
+
+
+/* ---------- TRIAGE CARD ---------- */
+
+.triage-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e9f1;
+
+    border-radius: 22px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 15px 40px rgba(28, 45, 75, 0.08);
+
+    margin-bottom: 35px;
+}
+
+
+/* Card Header */
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 28px;
+}
+
+.card-header h2 {
+    font-size: 24px;
+
+    margin-bottom: 6px;
+}
+
+.card-header p {
+    color: #7a8496;
+
+    font-size: 14px;
+}
+
+.step {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #246bfe;
+
+    background: #edf4ff;
+
+    padding: 9px 12px;
+
+    border-radius: 8px;
+}
+
+
+/* ---------- LABEL ---------- */
+
+label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+/* ---------- TEXT AREA ---------- */
+
+.input-wrapper {
+    position: relative;
+}
+
+textarea {
+    width: 100%;
+
+    resize: vertical;
+
+    min-height: 170px;
+
+    border: 1.5px solid #dce2eb;
+
+    border-radius: 14px;
+
+    padding: 18px 58px 18px 18px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #172033;
+
+    background: #fbfcfe;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+textarea:focus {
+    border-color: #246bfe;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(36, 107, 254, 0.08);
+}
+
+textarea::placeholder {
+    color: #a0a8b7;
+}
+
+
+/* ---------- VOICE BUTTON ---------- */
+
+.voice-button {
+    position: absolute;
+
+    right: 14px;
+    top: 14px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #edf4ff;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: 0.2s;
+}
+
+.voice-button:hover {
+    background: #dceaff;
+
+    transform: translateY(-1px);
+}
+
+
+/* ---------- EXAMPLES ---------- */
+
+.examples {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    margin-bottom: 25px;
+
+    font-size: 12px;
+
+    color: #8a93a3;
+}
+
+.examples button {
+    border: 1px solid #dce2eb;
+
+    background: #ffffff;
+
+    color: #4e5a6d;
+
+    border-radius: 20px;
+
+    padding: 7px 12px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: 0.2s;
+}
+
+.examples button:hover {
+    border-color: #246bfe;
+
+    color: #246bfe;
+
+    background: #f4f8ff;
+}
+
+
+/* ---------- ANALYZE BUTTON ---------- */
+
+.analyze-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 13px;
+
+    padding: 16px 20px;
+
+    background: #246bfe;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.2s;
+}
+
+.analyze-button:hover {
+    background: #1557d6;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 8px 20px rgba(36, 107, 254, 0.22);
+}
+
+.analyze-button:active {
+    transform: translateY(0);
+}
+
+.arrow {
+    font-size: 20px;
+}
+
+
+/* ---------- DISCLAIMER ---------- */
+
+.disclaimer {
+    text-align: center;
+
+    color: #8a93a3;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-top: 17px;
+}
+
+
+/* ---------- RESULT CARD ---------- */
+
+.result-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e9f1;
+
+    border-radius: 22px;
+
+    padding: 32px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 15px 40px rgba(28, 45, 75, 0.08);
+
+    animation: resultAppear 0.4s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Result Header */
+
+.result-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.result-header h2 {
+    font-size: 26px;
+}
+
+
+/* ---------- URGENCY BADGE ---------- */
+
+.urgency-badge {
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    background: #eef1f5;
+
+    color: #566174;
+}
+
+
+/* ---------- RESULT GRID ---------- */
+
+.result-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.result-box {
+    background: #f8faff;
+
+    border: 1px solid #e7ecf4;
+
+    border-radius: 14px;
+
+    padding: 20px;
+}
+
+.result-label {
+    display: block;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+    color: #8a93a3;
+
+    margin-bottom: 9px;
+}
+
+.result-box h3 {
+    font-size: 17px;
+
+    line-height: 1.4;
+}
+
+
+/* ---------- REASONING ---------- */
+
+.reasoning-box {
+    background: #f8faff;
+
+    border: 1px solid #e7ecf4;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+}
+
+.reasoning-box p {
+    color: #596579;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- HUMAN REVIEW ---------- */
+
+.review-box {
+    display: flex;
+
+    gap: 14px;
+
+    align-items: flex-start;
+
+    background: #fff8e8;
+
+    border: 1px solid #f3dfac;
+
+    border-radius: 14px;
+
+    padding: 17px;
+}
+
+.review-icon {
+    font-size: 23px;
+}
+
+.review-box strong {
+    font-size: 14px;
+}
+
+.review-box p {
+    color: #766746;
+
+    font-size: 13px;
+
+    margin-top: 4px;
+
+    line-height: 1.5;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    padding: 30px 0 45px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #98a1b1;
+
+    font-size: 11px;
+
+    border-top: 1px solid #e4e9f1;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .status {
+        display: none;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .triage-card,
+    .result-card {
+        padding: 22px;
+
+        border-radius: 17px;
+    }
+
+    .card-header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}

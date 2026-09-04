@@ -1,0 +1,126 @@
+{
+  "version": "1.0",
+  "description": "Prototype deterministic triage rules for PS01 hackathon demonstration.",
+  "rules": [
+    {
+      "rule_id": "R-CHP-01",
+      "name": "Chest pain with breathing difficulty",
+      "conditions": [
+        {
+          "fact": "chest_pain",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "breathing_difficulty",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "urgency": "HIGH",
+      "department": "Emergency / Immediate Assessment",
+      "reasoning": "Chest pain and breathing difficulty were both established in the reported information.",
+      "human_review_required": true
+    },
+
+    {
+      "rule_id": "R-CHP-02",
+      "name": "Chest pain with severe pain",
+      "conditions": [
+        {
+          "fact": "chest_pain",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "pain_severity",
+          "operator": "equals",
+          "value": "severe"
+        }
+      ],
+      "urgency": "HIGH",
+      "department": "Emergency / Immediate Assessment",
+      "reasoning": "Chest pain was reported together with severe pain.",
+      "human_review_required": true
+    },
+
+    {
+      "rule_id": "R-BRE-01",
+      "name": "Breathing difficulty",
+      "conditions": [
+        {
+          "fact": "breathing_difficulty",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "urgency": "HIGH",
+      "department": "Emergency / Immediate Assessment",
+      "reasoning": "Breathing difficulty was established in the reported information.",
+      "human_review_required": true
+    },
+
+    {
+      "rule_id": "R-FEV-01",
+      "name": "Persistent fever",
+      "conditions": [
+        {
+          "fact": "fever",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "duration_hours",
+          "operator": "greater_than",
+          "value": 24
+        }
+      ],
+      "urgency": "MODERATE",
+      "department": "General Medicine",
+      "reasoning": "Fever was reported and its duration exceeds the configured prototype threshold.",
+      "human_review_required": false
+    },
+
+    {
+      "rule_id": "R-INJ-01",
+      "name": "Injury with severe bleeding",
+      "conditions": [
+        {
+          "fact": "injury",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "severe_bleeding",
+          "operator": "equals",
+          "value": true
+        }
+      ],
+      "urgency": "HIGH",
+      "department": "Emergency / Immediate Assessment",
+      "reasoning": "An injury and severe bleeding were both established.",
+      "human_review_required": true
+    },
+
+    {
+      "rule_id": "R-ABD-01",
+      "name": "Moderate abdominal pain",
+      "conditions": [
+        {
+          "fact": "abdominal_pain",
+          "operator": "equals",
+          "value": true
+        },
+        {
+          "fact": "pain_severity",
+          "operator": "contains",
+          "value": "moderate"
+        }
+      ],
+      "urgency": "MODERATE",
+      "department": "General Medicine",
+      "reasoning": "Abdominal pain with moderate severity was established.",
+      "human_review_required": false
+    }
+  ]
+}
