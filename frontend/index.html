@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -10,272 +12,815 @@
 
     <link rel="stylesheet"
           href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- ================= HEADER ================= -->
 
-    <header class="navbar">
+<!-- ========================================
+     NAVBAR
+======================================== -->
 
-        <div class="logo">
-            <span class="logo-icon">✚</span>
-            <span>TriageCare <strong>AI</strong></span>
+<header class="navbar">
+
+    <div class="brand">
+
+        <div class="brand-mark">
+            +
         </div>
 
-        <div class="status">
-            <span class="status-dot"></span>
-            Prototype System
+        <div>
+            <span class="brand-name">
+                TriageCare
+            </span>
+
+            <span class="brand-ai">
+                AI
+            </span>
         </div>
 
-    </header>
+    </div>
 
 
-    <!-- ================= MAIN ================= -->
+    <div class="prototype-status">
 
-    <main class="container">
+        <span class="status-dot"></span>
 
-        <!-- Hero Section -->
+        Prototype
 
-        <section class="hero">
+    </div>
 
-            <div class="hero-text">
-
-                <p class="eyebrow">
-                    AI-ASSISTED PATIENT TRIAGE
-                </p>
-
-                <h1>
-                    Describe how you feel.
-                    <span>We'll help route your case.</span>
-                </h1>
-
-                <p class="hero-description">
-                    TriageCare AI extracts important information from
-                    your description and applies transparent triage
-                    rules to suggest an appropriate level of care.
-                </p>
-
-            </div>
-
-        </section>
+</header>
 
 
-        <!-- ================= TRIAGE CARD ================= -->
 
-        <section class="triage-card">
+<!-- ========================================
+     MAIN
+======================================== -->
 
-            <div class="card-header">
-
-                <div>
-                    <h2>Patient Information</h2>
-
-                    <p>
-                        Describe your symptoms in your own words.
-                    </p>
-                </div>
-
-                <div class="step">
-                    STEP 01
-                </div>
-
-            </div>
+<main class="container">
 
 
-            <!-- Symptom Input -->
+    <!-- ====================================
+         HERO
+    ==================================== -->
 
-            <label for="symptoms">
-                What's happening?
+    <section class="hero">
+
+        <div class="hero-tag">
+            AI-ASSISTED PATIENT TRIAGE
+        </div>
+
+
+        <h1>
+            Describe how you feel.
+            <span>
+                We'll help route your case.
+            </span>
+        </h1>
+
+
+        <p class="hero-description">
+
+            TriageCare AI extracts reported information
+            from natural language and applies transparent
+            rules to suggest an appropriate care route.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ====================================
+         PROGRESS
+    ==================================== -->
+
+    <div class="progress">
+
+        <div class="progress-step active"
+             id="step1">
+
+            <span>01</span>
+
+            <label>
+                Describe
             </label>
 
-            <div class="input-wrapper">
+        </div>
 
-                <textarea
-                    id="symptoms"
-                    placeholder="Example: I have chest pain and I'm finding it difficult to breathe..."
-                    rows="7"></textarea>
 
-                <button
-                    class="voice-button"
-                    id="voiceButton"
-                    title="Voice input">
-                    🎤
-                </button>
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step"
+             id="step2">
+
+            <span>02</span>
+
+            <label>
+                Clarify
+            </label>
+
+        </div>
+
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step"
+             id="step3">
+
+            <span>03</span>
+
+            <label>
+                Route
+            </label>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ====================================
+         PATIENT INPUT
+    ==================================== -->
+
+    <section class="input-card">
+
+        <div class="card-top">
+
+            <div>
+
+                <p class="section-label">
+                    PATIENT INFORMATION
+                </p>
+
+                <h2>
+                    What's happening?
+                </h2>
+
+                <p class="card-description">
+
+                    Describe your symptoms in your own words.
+                    No special format is required.
+
+                </p>
 
             </div>
 
 
-            <!-- Example buttons -->
-
-            <div class="examples">
-
-                <span>Try an example:</span>
-
-                <button onclick="useExample('I have chest pain and difficulty breathing.')">
-                    Chest pain
-                </button>
-
-                <button onclick="useExample('I have had a fever for 48 hours.')">
-                    Fever
-                </button>
-
-                <button onclick="useExample('I have moderate abdominal pain.')">
-                    Abdominal pain
-                </button>
-
+            <div class="step-label">
+                STEP 01
             </div>
 
+        </div>
 
-            <!-- Analyze button -->
+
+
+        <div class="input-area">
+
+            <textarea
+                id="symptoms"
+                rows="7"
+                maxlength="1000"
+                placeholder="Example: I have chest pain and I'm finding it difficult to breathe..."></textarea>
+
 
             <button
-                class="analyze-button"
-                id="analyzeButton"
-                onclick="analyzeSymptoms()">
+                class="voice-button"
+                id="voiceButton"
+                type="button"
+                title="Voice input">
 
-                <span>Analyze Symptoms</span>
-
-                <span class="arrow">
-                    →
-                </span>
+                🎤
 
             </button>
 
-
-            <!-- Disclaimer -->
-
-            <p class="disclaimer">
-                ⚠️ Prototype only — this tool does not provide
-                a medical diagnosis. Seek professional medical
-                care when needed.
-            </p>
-
-        </section>
+        </div>
 
 
-        <!-- ================= RESULT ================= -->
+        <div class="input-footer">
 
-        <section
-            class="result-card hidden"
-            id="resultCard">
+            <div class="examples">
 
-            <div class="result-header">
-
-                <div>
-                    <p class="eyebrow">
-                        TRIAGE RESULT
-                    </p>
-
-                    <h2 id="resultTitle">
-                        Analysis Complete
-                    </h2>
-                </div>
-
-                <div
-                    class="urgency-badge"
-                    id="urgencyBadge">
-                    —
-                </div>
-
-            </div>
-
-
-            <div class="result-grid">
-
-                <!-- Department -->
-
-                <div class="result-box">
-
-                    <span class="result-label">
-                        RECOMMENDED ROUTE
-                    </span>
-
-                    <h3 id="department">
-                        —
-                    </h3>
-
-                </div>
-
-
-                <!-- Rule -->
-
-                <div class="result-box">
-
-                    <span class="result-label">
-                        RULE APPLIED
-                    </span>
-
-                    <h3 id="rule">
-                        —
-                    </h3>
-
-                </div>
-
-            </div>
-
-
-            <!-- Reasoning -->
-
-            <div class="reasoning-box">
-
-                <span class="result-label">
-                    WHY THIS RESULT?
+                <span>
+                    Try:
                 </span>
 
-                <p id="reasoning">
-                    —
+
+                <button
+                    type="button"
+                    onclick="useExample('I have chest pain and difficulty breathing.')">
+
+                    Chest pain
+
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="useExample('I have had a fever for 48 hours.')">
+
+                    Fever
+
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="useExample('I have moderate abdominal pain.')">
+
+                    Abdominal pain
+
+                </button>
+
+            </div>
+
+
+            <div class="character-count">
+
+                <span id="charCount">0</span>
+                / 1000
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            class="analyze-button"
+            id="analyzeButton"
+            type="button"
+            onclick="analyzeSymptoms()">
+
+            <span id="analyzeText">
+                Analyze Symptoms
+            </span>
+
+            <span
+                class="analyze-arrow"
+                id="analyzeArrow">
+
+                →
+
+            </span>
+
+        </button>
+
+
+        <div class="privacy-note">
+
+            <span>i</span>
+
+            Prototype only. This tool does not provide
+            a medical diagnosis.
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         FOLLOW-UP
+    ==================================== -->
+
+    <section
+        class="follow-up-card hidden"
+        id="followUpCard">
+
+        <div class="card-top">
+
+            <div>
+
+                <p class="section-label">
+                    MORE INFORMATION NEEDED
+                </p>
+
+                <h2>
+                    A few more details
+                </h2>
+
+                <p class="card-description">
+
+                    Please answer the questions below so
+                    the prototype can complete its rule check.
+
                 </p>
 
             </div>
 
 
-            <!-- Human review -->
+            <div class="step-label">
+                STEP 02
+            </div>
+
+        </div>
+
+
+        <div id="followUpQuestions"></div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         RESULT
+    ==================================== -->
+
+    <section
+        class="result-card hidden"
+        id="resultCard">
+
+
+        <div class="result-top">
+
+            <div>
+
+                <p class="section-label">
+                    TRIAGE RESULT
+                </p>
+
+                <h2>
+                    Analysis complete
+                </h2>
+
+            </div>
+
 
             <div
-                class="review-box"
-                id="reviewBox">
+                class="urgency-badge"
+                id="urgencyBadge">
 
-                <span class="review-icon">
-                    👨‍⚕️
+                —
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Main result -->
+
+        <div class="route-result">
+
+            <div class="route-main">
+
+                <span class="result-label">
+                    RECOMMENDED ROUTE
                 </span>
+
+                <h3 id="department">
+                    —
+                </h3>
+
+            </div>
+
+
+            <div class="route-rule">
+
+                <span class="result-label">
+                    RULE APPLIED
+                </span>
+
+                <p id="rule">
+                    —
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Reasoning -->
+
+        <div class="reasoning">
+
+            <span class="result-label">
+                WHY THIS RESULT?
+            </span>
+
+            <p id="reasoning">
+                —
+            </p>
+
+        </div>
+
+
+
+        <!-- Patient facts -->
+
+        <div class="facts-section">
+
+            <div class="facts-heading">
+
+                <span class="result-label">
+                    ESTABLISHED INFORMATION
+                </span>
+
+            </div>
+
+
+            <div
+                class="patient-facts"
+                id="patientFacts">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Extraction source -->
+
+        <div class="technical-row">
+
+            <div>
+
+                <span class="result-label">
+                    EXTRACTION SOURCE
+                </span>
+
+                <strong id="extractionSource">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span class="result-label">
+                    DECISION MODEL
+                </span>
+
+                <strong>
+                    Deterministic Rules
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Human review -->
+
+        <div
+            class="review-box hidden"
+            id="reviewBox">
+
+            <div class="review-icon">
+                H
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Human Review
+                </strong>
+
+                <p id="reviewText">
+                    —
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ====================================
+         SYSTEM PIPELINE
+    ==================================== -->
+
+    <section class="pipeline-section">
+
+        <div class="pipeline-heading">
+
+            <p class="section-label">
+                SYSTEM PIPELINE
+            </p>
+
+            <h2>
+                Simple by design.
+            </h2>
+
+            <p>
+                AI extracts information. Rules make the decision.
+            </p>
+
+        </div>
+
+
+        <div class="pipeline">
+
+
+            <div class="pipeline-item">
+
+                <div class="pipeline-icon">
+                    01
+                </div>
 
                 <div>
 
                     <strong>
-                        Human Review
+                        Patient Input
                     </strong>
 
-                    <p id="reviewText">
-                        —
-                    </p>
+                    <span>
+                        Natural language
+                    </span>
 
                 </div>
 
             </div>
 
-        </section>
+
+            <div class="pipeline-arrow">
+                →
+            </div>
 
 
-        <!-- ================= FOOTER ================= -->
+            <div class="pipeline-item ai">
 
-        <footer>
+                <div class="pipeline-icon">
+                    AI
+                </div>
+
+                <div>
+
+                    <strong>
+                        Gemini
+                    </strong>
+
+                    <span>
+                        Fact extraction
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-arrow">
+                →
+            </div>
+
+
+            <div class="pipeline-item">
+
+                <div class="pipeline-icon">
+                    R
+                </div>
+
+                <div>
+
+                    <strong>
+                        Rule Engine
+                    </strong>
+
+                    <span>
+                        Deterministic logic
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-arrow">
+                →
+            </div>
+
+
+            <div class="pipeline-item">
+
+                <div class="pipeline-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Care Route
+                    </strong>
+
+                    <span>
+                        Explainable result
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="pipeline-principle">
+
+            <span>
+                !
+            </span>
 
             <p>
-                TriageCare AI · PS01 Hackathon Prototype
+
+                <strong>
+                    Explainability by design
+                </strong>
+
+                Gemini extracts reported facts but does not
+                decide the triage level. The configured
+                deterministic rule engine makes the prototype decision.
+
             </p>
+
+        </div>
+
+    </section>
+
+<!-- ====================================
+     CASE HISTORY
+==================================== -->
+
+<section class="history-section">
+
+    <div class="history-heading">
+
+        <div>
+
+            <p class="section-label">
+                CASE HISTORY
+            </p>
+
+            <h2>
+                Previous analyses
+            </h2>
+
+        </div>
+
+        <button
+            class="clear-history-button"
+            type="button"
+            onclick="clearHistory()">
+
+            Clear history
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="history-list"
+        id="historyList">
+
+        <div class="history-empty">
+
+            <div class="history-empty-icon">
+                +
+            </div>
 
             <p>
-                Explainable • Rule-Based • Human-in-the-Loop
+                No previous analyses yet.
             </p>
 
-        </footer>
+            <span>
+                Completed cases will appear here.
+            </span>
 
-    </main>
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ====================================
+         SIMPLE DEMO STATUS
+    ==================================== -->
+
+    <section class="demo-status">
+
+        <div>
+
+            <span class="section-label">
+                DEMO STATUS
+            </span>
+
+            <p id="dashboardCase">
+                No case analyzed yet.
+            </p>
+
+        </div>
 
 
-    <!-- JavaScript -->
+        <div class="demo-meta">
 
-    <script src="script.js"></script>
+            <div>
+
+                <span>
+                    CASES
+                </span>
+
+                <strong id="casesAnalyzed">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong id="dashboardStatus">
+                    READY
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    SOURCE
+                </span>
+
+                <strong id="dashboardSource">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    REVIEW
+                </span>
+
+                <strong id="dashboardReview">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ====================================
+         FOOTER
+    ==================================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <span class="footer-mark">
+                +
+            </span>
+
+            <strong>
+                TriageCare AI
+            </strong>
+
+        </div>
+
+
+        <p>
+            PS01 Hackathon Prototype
+        </p>
+
+
+        <p class="footer-right">
+            Explainable · Rule-Based · Human-in-the-Loop
+        </p>
+
+    </footer>
+
+
+</main>
+
+
+
+<script src="script.js"></script>
 
 </body>
+
 </html>
